@@ -1,19 +1,29 @@
-var countDownDate = new Date("2023").getTime();
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minsEl = document.getElementById("mins");
+const secondsEl = document.getElementById("seconds");
+const newYear = "2023";
 
-var x = setInterval(function() {
-    var now = new Date().getTime();
+function countdown() {
+  var newYearDate = new Date(newYear);
+  var now = new Date().getTime();
 
-    var distance = countDownDate - now;
+  var totalSeconds = (newYearDate - now) / 1000;
 
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(totalSeconds / 3600 / 24);
+  const hours = Math.floor(totalSeconds / 3600) % 24;
+  const mins = Math.floor(totalSeconds / 60) % 60;
+  const seconds = Math.floor(totalSeconds) % 60;
 
-    document.getElementById("demo").innerHTML = days + "/Days " + hours + "/Hours " + minutes + "/Minutes " + seconds + "/Seconds ";
+  daysEl.innerHTML = days;
+  hoursEl.innerHTML = formatTime(hours);
+  minsEl.innerHTML = formatTime(mins);
+  secondsEl.innerHTML = formatTime(seconds);
+}
 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "End";
-    }
-}, 1000)
+function formatTime(time) {
+  return time < 10 ? `0${time}` : time;
+}
+
+countdown();
+setInterval(countdown, 1000);

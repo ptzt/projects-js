@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html class="html">
-    <head>
-        <title>Countdown</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
-    <body>
-        <h1 class="titulo">Next Year</h1>
-        <div class="div">
-            <script src="./script.js"></script>
-            <p id="demo"></p>
-        </div>
-    </body>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown timer</title>
+  </head>
+
+  <body>
+    <p1>Next Year</p1>
+    <div class="countdown-container">
+      <div class="countdown-el days-c">
+        <p class="text" id="days">0</p>
+        <span>days</span>
+      </div>
+      <div class="countdown-el hours-c">
+        <p class="text" id="hours">0</p>
+        <span>hours</span>
+      </div>
+      <div class="countdown-el mins-c">
+        <p class="text" id="mins">0</p>
+        <span>mins</span>
+      </div>
+      <div class="countdown-el seconds-c">
+        <p class="text" id="seconds">0</p>
+        <span>seconds</span>
+      </div>
+      <script src="./script.js"></script>
+    </div>
+  </body>
 </html>
