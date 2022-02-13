@@ -1,1 +1,1 @@
-10 projects
+Projects in Vanilla JavaScript with HTML and CSS
